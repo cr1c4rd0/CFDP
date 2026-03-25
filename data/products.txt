@@ -1,0 +1,10 @@
+1;Cafe Tostado;45193
+2;Azucar Blanca;48367
+3;Arroz Diana;12166
+4;Leche Entera;49041
+5;Pan Tajado;42799
+6;Aceite Girasol;23032
+7;Sal Refinada;29777
+8;Harina de Trigo;24924
+9;Pasta Espagueti;49485
+10;Atun en Lata;24546
