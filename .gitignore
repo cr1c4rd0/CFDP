@@ -30,7 +30,3 @@ bin/
 .DS_Store
 
 ### Delivery 2+ (not part of Delivery 1) ###
-src/EntregaGrupal/Seller.java
-src/EntregaGrupal/Product.java
-src/EntregaGrupal/Sale.java
-src/EntregaGrupal/SalesSystem.java
