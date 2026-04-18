@@ -1,0 +1,76 @@
+===========================================================
+  CFDP - Conceptos Fundamentales de Programacion
+  Subgrupo 7: Santiago Fuentes Lopez,
+              Cristian Mauricio Ricardo Rojas,
+              Lina Garnica Gomez
+  Entrega 3 - Conclusion
+===========================================================
+
+--- Que aprendimos ---
+
+A lo largo de este proyecto consolidamos los fundamentos de la
+programacion orientada a objetos en Java: encapsulamiento, cohesion
+de clases y separacion de responsabilidades.  Aprendimos a disenar
+un sistema desde cero partiendo de clases modelo (Seller, Product,
+Sale), una clase repositorio (SalesSystem) y dos clases ejecutables
+con metodo main (GenerateInfoFiles y Main), respetando una
+arquitectura limpia donde cada clase tiene un proposito unico y
+bien definido.
+
+En el lado practico dominamos la lectura y escritura de archivos
+planos con BufferedReader y BufferedWriter, el uso de colecciones
+(ArrayList, HashMap) para agregar datos en memoria y el ordenamiento
+con Comparator para producir reportes ordenados por criterios de
+negocio (mayor recaudo, mayor cantidad vendida).  Tambien practicamos
+la documentacion formal del codigo mediante Javadoc, un estandar
+industrial que facilita el mantenimiento futuro.
+
+--- Aplicaciones profesionales ---
+
+Las tecnicas utilizadas aqui se replican directamente en proyectos
+del mundo real:
+
+1. ETL (Extract-Transform-Load): la lectura de archivos planos y
+   su carga en estructuras en memoria es exactamente lo que hacen
+   los pipelines de datos empresariales antes de insertar registros
+   en una base de datos relacional.
+
+2. Microservicios de reportes: la generacion de salesReport.csv y
+   productsReport.csv es equivalente a un endpoint /reports que
+   devuelve datos agregados para dashboards de ventas.
+
+3. Separacion de capas: la division entre GenerateInfoFiles (capa
+   de generacion/entrada de datos) y Main (capa de procesamiento y
+   salida) anticipa el patron MVC y la arquitectura en capas de
+   aplicaciones enterprise.
+
+4. Mantenibilidad: documentar con Javadoc y mantener metodos
+   pequenos con responsabilidad unica reduce el costo de incorporar
+   nuevos integrantes a un equipo de desarrollo.
+
+--- Dificultades encontradas ---
+
+1. Lectura robusta de archivos: el formato de los archivos de ventas
+   incluia un punto y coma al final de cada linea (ej: "3;45;"), lo
+   que requirio manejo especial al hacer split para evitar arreglos
+   con elementos vacios.
+
+2. Coherencia de datos: al cargar las ventas fue necesario validar
+   que el ID del producto referenciado en el archivo del vendedor
+   existiera realmente en el mapa de productos, agregando mensajes
+   de advertencia en lugar de lanzar excepciones que detuvieran el
+   sistema.
+
+3. Formato de salida: unificar el formato numerico (sin decimales
+   para precios enteros, con separadores de miles) entre la salida
+   de consola y los archivos CSV requirio uso de String.format y
+   ajustes en los tipos de datos (double vs int).
+
+4. Coordinacion en equipo: dividir el trabajo en clases independientes
+   facilito el desarrollo en paralelo, pero exigio definir contratos
+   claros (firmas de metodos, formatos de archivo) antes de comenzar
+   a codificar, una leccion clave del trabajo colaborativo.
+
+===========================================================
+  Repositorio GitHub: https://github.com/cr1c4rd0/CFDP
+===========================================================
